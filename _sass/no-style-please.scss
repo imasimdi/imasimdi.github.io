@@ -67,17 +67,23 @@ table, th, td {
   padding: 0.4rem;
 }
 
+/* 인라인 코드 스타일 */
 code {
-  color: white;
-  background: black;
+  color: rgba(0, 0, 0, 0.896);
+  background: rgb(180, 180, 180);
+  padding: 0.1em 0.1em;
+  border-radius: 3px;
 }
 
-div.highlighter-rouge code {
+div.highlighter-rouge pre code {
   display: block;
   overflow-x: auto;
   white-space: pre-wrap;
   padding: 1rem;
+  color: #000000;
+  background: #e2e2e2;
 }
+
 
 blockquote {
   font-style: italic;

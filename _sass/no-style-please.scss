@@ -43,7 +43,7 @@ p { margin: 1rem 0; }
 
 li { margin: 0.4rem 0; }
 
-*:target { background: orange; }
+*:target { background: rgb(0, 0, 0); }
 
 .w {
   max-width: 640px;
@@ -73,6 +73,7 @@ code {
   background: rgb(180, 180, 180);
   padding: 0.1em 0.1em;
   border-radius: 3px;
+  font-size: 14px;
 }
 
 div.highlighter-rouge pre code {

@@ -27,7 +27,7 @@ https://techblog.gccompany.co.kr/spark-cluster-구축기-3ab223853b74
 
 ## Spark Job은 어떻게 실행되나?
 - Spark Job이 실행될 때, Job의 작업단위는 어떻게 되는가?
-![alt text](/assets/images/data-engineering/hadoop/4/image.png)
+![alt text](/assets/images/data-engineering/hadoop/image/4/image.png)
     - 작업 제출: 스파크 애플리케이션을 마스터노드에 제출
     - 자원 할당: 클러스터 매니저가 애플리케이션 실행에 필요한 자원(메모리, CPU 시간 등)을 Worker Node에 할당하고 Task를 수행하는 Executor 프로세스를 시작. Executor의 위치와 정보를 드라이버 프로세스에 전송함.
     - 작업 실행: Worker Node는 할당된 자원을 사용하여 실제 데이터 처리 작업 수행. Task를 할당 받은 Worker는 Task의 상태와 성공/실패 여부를 드라이버에 전송

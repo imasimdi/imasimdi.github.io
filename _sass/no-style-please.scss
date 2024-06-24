@@ -99,3 +99,13 @@ img {
   display: block;
   margin: 0 auto;
 }
+
+a {
+  color: rgb(0, 145, 255); /* 원하는 색깔로 변경 */
+  text-decoration: none; /* 밑줄 제거 (원하는 경우) */
+}
+
+a:hover {
+  color: darkblue; /* 호버 시 색깔 변경 */
+  text-decoration: underline; /* 호버 시 밑줄 추가 (원하는 경우) */
+}

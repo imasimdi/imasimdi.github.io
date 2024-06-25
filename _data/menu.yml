@@ -13,13 +13,13 @@ entries:
   - title: Category
     entries:
       - title: Python
-        url: python-archive.html
+        url: python
       - title: AWS
-        url: AWS-archive.html
-      - title: data-engineering
-        url: data-engineering-archive.html
-      - title: backend-challenge
-        url: backend-challenge-archive.html
+        url: AWS
+      - title: Data Engineering
+        url: data-engineering
+      - title: Backend Challenge
+        url: backend-challenge
   - title: Recent posts
     post_list:
       limit: 100

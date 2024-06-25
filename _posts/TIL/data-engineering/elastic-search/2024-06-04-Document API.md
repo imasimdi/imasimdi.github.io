@@ -1,4 +1,9 @@
-# Document API
+---
+layout: post
+category: data-engineering
+subcategory: elastic-search
+---
+
 - 생성한 인덱스를 관리할 목적
 ## 문서 파라미터
 - ID: 지정하지 않으면 자동으로 ID 부여

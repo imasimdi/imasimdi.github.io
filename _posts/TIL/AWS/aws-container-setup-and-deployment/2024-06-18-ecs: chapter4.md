@@ -1,6 +1,7 @@
 ---
 layout: post
 category: AWS
+subcategory: aws-container-setup-and-deployment
 ---
 # 네트워크 구축
 ## 서브넷 생성

@@ -1,6 +1,7 @@
 ---
 layout: post
 category: AWS
+subcategory: aws-container-setup-and-deployment
 ---
 
 # 컨테이너를 이용한 AWS 아키텍처

@@ -1,6 +1,7 @@
 ---
 layout: post
 category: data-engineering
+subcategory: hadoop
 ---
 
 - 여기어때 기술블로그를 읽고 정리한 글입니다.

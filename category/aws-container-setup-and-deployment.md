@@ -5,3 +5,5 @@ which_subcategory: aws-container-setup-and-deployment
 title: AWS 컨테이너 설계와 구축 철저 입문
 permalink: /AWS/aws-container-setup-and-deployment/
 ---
+
+📚 AWS 컨테이너 설계와 구축 철저 입문을 읽고 정리했습니다.

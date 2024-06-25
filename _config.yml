@@ -28,9 +28,3 @@ plugins:
 
 markdown: kramdown
 highlighter: rouge
-
-category_list:
-  - AWS
-  - python
-  - data-engineering
-  - backend-challenge

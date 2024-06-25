@@ -8,7 +8,7 @@ layout: default
 
 {%- assign subcategories = site.posts | where: "category", page.which_category | map: "subcategory" | uniq -%}
 {% if subcategories.size > 0 %}
-  <h2>Subcategories</h2>
+  <h2>Categories</h2>
   <ul>
     {% for subcategory in subcategories %}
       {% if subcategory %}

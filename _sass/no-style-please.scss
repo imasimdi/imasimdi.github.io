@@ -31,7 +31,7 @@ body {
   margin: 0;
   min-height: 100%;
   overflow-wrap: break-word;
-  word-spacing: -2.7px;
+  word-spacing: -5px;
 }
 
 .post-meta { text-align: right; }
@@ -84,6 +84,7 @@ div.highlighter-rouge pre code {
   color: #000000;
   background: #e2e2e2;
   font-size: 15px;
+  word-spacing: 1px;
 }
 
 

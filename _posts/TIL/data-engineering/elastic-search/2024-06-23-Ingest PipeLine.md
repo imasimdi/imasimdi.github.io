@@ -379,3 +379,9 @@ https://www.elastic.co/guide/en/elasticsearch/reference/current/processors.html
     ]
     }
     ```
+
+    ```json
+    {
+      "test": "test"
+    }
+    ```

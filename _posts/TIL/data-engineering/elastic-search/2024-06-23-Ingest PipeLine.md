@@ -13,7 +13,7 @@ category: data-engineering
         - 데이터를 가공하는 개별 작업 단위
         - 이 processor들이 순차적으로 연결되어 하나의 pipline을 구성한다.
 
-        ```json
+        ```
         PUT _ingest/pipeline/my_pipeline
         {
         "description": "A pipeline to process log data",
@@ -51,7 +51,7 @@ category: data-engineering
 ## PipeLine 예시
 - Pipeline을 설정하기 위해서는 Ingest Node가 활성화 필요
 
-```json
+```
 PUT _ingest/pipline/{pipline name}
 {
   "description" : "...",
@@ -67,7 +67,7 @@ PUT _ingest/pipline/{pipline name}
 - 정의된 필드의 데이터를 구분자로 분해
 - 배열 형태로 만들어준다.
 
-```json
+```
 PUT _ingest/pipeline/split_field
 {
   "description": "Decompose the field by separator",
@@ -85,7 +85,7 @@ PUT _ingest/pipeline/split_field
 - `_simulate` API를 통해서 생성할 processor를 확인할 수 있다.
 - docs의 _source 필드에 값을 입력하면 결과를 미리 볼 수 있다.
 
-```json
+```
 POST _ingest/pipeline/_simulate
 {
   "pipeline": {
@@ -140,7 +140,7 @@ POST _ingest/pipeline/_simulate
 ## HTML strip processor
 - 필드의 HTML Tag를 제거해준다.
 
-```json
+```
 PUT _ingest/pipeline/html_strip
 {
   "description": "Remove Html Tag", 
@@ -156,7 +156,7 @@ PUT _ingest/pipeline/html_strip
 
 - 시뮬레이터 결과
 
-```json
+```
 POST _ingest/pipeline/_simulate
 {
   "pipeline": {
@@ -202,7 +202,7 @@ POST _ingest/pipeline/_simulate
 ## Index 적용
 - 정의한 Pipeline을 적용하여 색인할 때는 index API뒤에 `pipeline={pipeline_name}`를 붙여서 호출한다.
 
-```json
+```
 ## 인덱스 생성
 PUT sample_index
 {
@@ -290,6 +290,7 @@ https://www.elastic.co/guide/en/elasticsearch/reference/current/processors.html
 
 - grok
     - 정규 표현식을 사용하여 필드의 값을 구조화된 데이터로 추출
+
     ```json
     {
     "grok": {
@@ -302,6 +303,7 @@ https://www.elastic.co/guide/en/elasticsearch/reference/current/processors.html
 
 - rename
     - 필드의 이름을 변경
+
     ```json
     {
     "rename": {
@@ -326,7 +328,7 @@ https://www.elastic.co/guide/en/elasticsearch/reference/current/processors.html
 - 그 외 파이썬 문법과 비슷한 동작을 하는 join, split등 이이 있고, JSON, CSV와 같은 데이터를 파싱도 가능하다.
 
 - json
-    ```json
+    ```
     POST _ingest/pipeline/_simulate
     {
     "pipeline": {

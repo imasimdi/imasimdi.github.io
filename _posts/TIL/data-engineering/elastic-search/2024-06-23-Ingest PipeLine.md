@@ -111,7 +111,7 @@ POST _ingest/pipeline/_simulate
 
 - 결과
 
-```json
+```javascript
 {
   "docs" : [
     {
@@ -179,7 +179,7 @@ POST _ingest/pipeline/_simulate
 }
 ```
 
-```json
+```javascript
 {
   "docs": [
     {
@@ -253,7 +253,7 @@ POST sample_index/_doc?pipeline=sample_pipeLine
 
 - 결과
 
-```json
+```javascript
  {
         "_index" : "sample_index",
         "_type" : "_doc",
@@ -279,19 +279,19 @@ https://www.elastic.co/guide/en/elasticsearch/reference/current/processors.html
 
 - convert
 
-```json
-{
-  "convert": {
-    "field": "age",
-    "type": "integer"
+  ```javascript
+  {
+    "convert": {
+      "field": "age",
+      "type": "integer"
+    }
   }
-}
-```
+  ```
 
 - grok
     - 정규 표현식을 사용하여 필드의 값을 구조화된 데이터로 추출
 
-    ```json
+    ```javascript
     {
     "grok": {
         "field": "message",
@@ -304,7 +304,7 @@ https://www.elastic.co/guide/en/elasticsearch/reference/current/processors.html
 - rename
     - 필드의 이름을 변경
 
-    ```json
+    ```javascript
     {
     "rename": {
         "field": "old_field",
@@ -315,20 +315,19 @@ https://www.elastic.co/guide/en/elasticsearch/reference/current/processors.html
 
 - set
 
-```json
-{
-  "set": {
-    "field": "status",
-    "value": "active"
+  ```javascript
+  {
+    "set": {
+      "field": "status",
+      "value": "active"
+    }
   }
-}
 
-```
+  ```
 
 - 그 외 파이썬 문법과 비슷한 동작을 하는 join, split등 이이 있고, JSON, CSV와 같은 데이터를 파싱도 가능하다.
 
-- json
-    ```
+    ```javascript
     POST _ingest/pipeline/_simulate
     {
     "pipeline": {
@@ -355,7 +354,7 @@ https://www.elastic.co/guide/en/elasticsearch/reference/current/processors.html
 
     - target_field에서 파싱된 데이터를 저장할 필드명을 정한다.
     
-    ```json
+    ```javascript
         {
     "docs": [
         {
@@ -380,7 +379,7 @@ https://www.elastic.co/guide/en/elasticsearch/reference/current/processors.html
     }
     ```
 
-    ```json
+    ```javascript
     {
       "test": "test"
     }

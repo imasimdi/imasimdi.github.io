@@ -64,24 +64,6 @@ GROUP BY
 
 - `user_type` 필드가 `GROUP BY` 절에 포함되지 않았고, 집계 함수로 처리되지 않았기 때문에 원래대로라면 쿼리는 위의 논리대로라면 실행되면 안된다.
 - 그러나 `user_id`가 기본 키이므로, `user_id`가 주어지면 `user_email`과 `user_type`이 유일하게 식별된다. 따라서 쿼리 실행이 가능하다.
-#### `sql_mode` 설정 변경
-
-`sql_mode` 설정을 변경하여 `ONLY_FULL_GROUP_BY`를 비활성화하면 쿼리를 실행할 수 있습니다:
-
-```sql
-SET sql_mode = '';
-
-SELECT 
-    user_id,
-    MAX(user_email) AS max_email,
-    user_type
-FROM 
-    users
-GROUP BY 
-    user_id;
-```
-
-이 경우 MySQL은 `user_id`가 `user_email`과 `user_type`을 함수적으로 결정한다고 가정하고 쿼리를 실행합니다.
 
 ### 요약
 

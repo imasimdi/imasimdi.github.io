@@ -6,4 +6,4 @@ title: Hadoop TIL
 permalink: /data-engineering/hadoop/
 ---
 
-📚 Hadoop TIL
+<span class="moji">📚</span> Hadoop TIL

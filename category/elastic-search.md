@@ -6,4 +6,4 @@ title: 엘라스틱서치
 permalink: /data-engineering/elastic-search/
 ---
 
-📚 elastic-search TIL
+<span class="moji">📚</span> elastic-search TIL

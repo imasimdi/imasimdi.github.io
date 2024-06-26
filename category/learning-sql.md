@@ -6,4 +6,4 @@ title: SQL
 permalink: /data-engineering/learning-sql/
 ---
 
-📒 Learning SQL
+<span class="moji">📒</span> Learning SQL

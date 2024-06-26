@@ -1,5 +1,6 @@
 # ECS - 모른 것만 필기
 - 가급적 클라우드는 AWS-managed 를 사용하는 것을 추천
+
 ## ECS 클러스터 생성
 - Cluster = Container들을 묶어 놓는 곳
     - 쿠버네티스 용어인데.. 가져온 듯

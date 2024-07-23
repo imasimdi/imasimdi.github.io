@@ -2,7 +2,7 @@
 layout: sub_category
 which_category: data-engineering
 which_subcategory: SQL-Tuning
-title: Kafka TIL
+title: 친절한 SQL 튜닝
 permalink: /data-engineering/SQL-Tuning/
 ---
 

@@ -6,4 +6,4 @@ title: 친절한 SQL 튜닝
 permalink: /data-engineering/sql-tuning/
 ---
 
-친절한 SQL 튜닝을 읽고
+친절한 SQL 튜닝을 읽고 정리

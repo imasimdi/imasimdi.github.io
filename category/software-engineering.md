@@ -1,6 +1,6 @@
 ---
 layout: archive
 which_category: software-engineering
-title: software-engineering
+title: Software Engineering
 permalink: /software-engineering/
 ---

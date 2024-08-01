@@ -20,6 +20,8 @@ entries:
         url: data-engineering
       - title: Backend Challenge
         url: backend-challenge
+      - title: Software Engineering
+        url: software-engineering
   - title: Recent posts
     post_list:
       limit: 100

@@ -66,7 +66,7 @@ UserModel:
 }
 ```
 
-- 만약의 nested request 처럼 복잡한 요청 본문을 정의 하라면 다음과 같이 중첩된 객체나 여러 필드를 포함한ㅌ다.
+- 만약의 nested request 처럼 복잡한 요청 본문을 정의 하라면 다음과 같이 중첩된 객체나 여러 필드를 포함한다.
 
 ```yaml
 UserModel:

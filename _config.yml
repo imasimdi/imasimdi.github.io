@@ -28,3 +28,5 @@ plugins:
 
 markdown: kramdown
 highlighter: rouge
+
+future: true

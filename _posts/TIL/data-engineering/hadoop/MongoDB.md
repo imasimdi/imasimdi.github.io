@@ -8,6 +8,7 @@
     - Database
     - Collections: 거의 모든 것이 들어 수 있으나 다른 데이터베이스의 컬렉션으로 옮길 수 없다.
     - Documents
+    
 ## 아키텍처
 - Replication Sets
     - 단일 마스터 아키텍처, 가용성 보다 일관성을 우선

@@ -14,16 +14,20 @@
 - 회복성 분산 데이터 세트
 - 작업을 분산하고 실패가 생겨도 회복시킨다.
 - RDD 만드는 법 Spark Context
+
 ```python
 nums = sc.paralleize([])
 sc.textFile("경로") # -> hdfs:// or s3n:// 가 될 수도 있음 
 ```
+
 - map: 입출력이 1대 1
+
 ```python
 rdd = sc.parallelize([1, 2, 3, 4])
 squaredRDD = rdd.map(lambda x: x * x)
 1, 4, 9, 16
 ```
+
 - flatmap: 입력행과 출력행 사이의 일대 몇 관계 가능
 - filter
 - distinct
@@ -44,6 +48,7 @@ squaredRDD = rdd.map(lambda x: x * x)
 ![alt text](image/2/image-1.png)
 
 ## Spark SQL - dataframes and datasets
+
 ### DataFrame
 - DataFrame은 RDD를 DataFrame 객체로 확장하는 것
 - import SQLContext, Row를 하고 hiveContext로 불러올 수 있다.
@@ -52,6 +57,7 @@ squaredRDD = rdd.map(lambda x: x * x)
 - filter()
 - groupBy
 - rdd().map() -> 여기서 rdd 수준의 작업이 가능하다.
+
 ### DataSet
 - Datarame은 열 객체의 DataSet이다.
 ```python

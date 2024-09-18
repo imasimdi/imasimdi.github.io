@@ -58,7 +58,7 @@ parameter_overrides = [
 - 기존 cloudformation 처럼 Globals, Parameters와 같은 설정이 있다.
 - 여기에서 ssm parameter store에 운영환경 (dev, prod)별로 경로를 다르게 설정 한 뒤 변수들을 저장시켜둔다.
     - 예를 들면 `/example/prod/db-url` 과 `/example/dev/db-url`로 경로를 설정할 수 있다.
-
+{% raw %}
 ```yaml
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
@@ -113,7 +113,7 @@ Outputs:
     - 예를 들면 `'{{resolve:ssm:/example/${NowEnvironment}/db-url}}'`은 cloudformation에서 ssm parameter store의 변수를 가져오는 문법인데, 여기에 `!Sub`를 통해서 Parameters의 `NowEnvironment` 값을 넣을 수 있다.
     - 트리거를 설정하는 Event에서도 SQS Queue url을 `Environment`로 나눌 수 있다.
 - 참고로 아직 sam template 에서는 `SecretString` 유형의 파라미터를 불러올 수 없다.
-
+{% endraw %}
 ## github action과의 통합
 
 - 앞서 samconfig.toml에서 환경울 나눈 뒤, parameter overrides을 통해 template.yaml의 Parater로 값을 오버라이딩하여 개발/운영 환경에 따라서 필요한 환경변수 및 설정들을 나누는 것을 알아봤다.

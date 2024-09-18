@@ -3,6 +3,7 @@
 - Map reduce나 Tez를 사용한다.
 - 익숙한 쿼리 언어를 사용한다는 것이 큰 장점이다.
 - 복잡한 쿼리를 `VIEW` 를 사용해 조각들로 나눌 수 있다.
+
 ## 적합하지 않은 경우
 - 실시간 처리 작업에는 적합하지 않지만, 대용량데이터 세트를 쿼리하는데 적합하다.
 - OLTP에 적합하지 않다. `Online Transaction Processing` 고 커치, 저 대기를 원한다면 좋은 선택은 아니다. SQL -> MapReduce를 거치기 때문
@@ -29,9 +30,13 @@
 ## SCOOP
 - 기존의 데이터베이스를 하둡으로 보내는 것
 - Mysql -> Mapper -> Hadoop
-- `sqoop import --connect jdbc:mysql://localhost/moivelens --driver com.mysql.jdbc.Driver --table moives` 로 쉽게 불러올 수 있음
+- `sqoop import --connect jdbc:mysql://localhost/moivelens --driver com.mysql.jdbc.Driver -   -  - `table moives` 로 쉽게 불러올 수 있음
 - `-m` 을 통해서 매퍼 개수를 정할 수 있음. 우리는 `-m 1`를 붙임
 - hive import를 하려면 `--hive-import` 를 붙이면 됨
 - 증분적 불러오기도 가능. --check-column and --last-value
-- Hive에서 mysql로도 보낼 수 있다. `sqoop export --connect jdbc:mysql://localhost/moivelens -, 1 --driver com.mysql.jdbc.Driver --table exported_moives --export-dir /apps/hive/warehouse/movies --imput-fields-tertminated-by '\0001'`
+- Hive에서 mysql로도 보낼 수 있다.
+```
+sqoop export --connect jdbc:mysql://localhost/moivelens -, 1 --driver com.mysql.jdbc.Driver --table exported_moives --export-dir /apps/hive/warehouse/movies --imput-fields-tertminated-by '\0001'
+```
+
 - 테이블을 사전에 만들어두어야한다.

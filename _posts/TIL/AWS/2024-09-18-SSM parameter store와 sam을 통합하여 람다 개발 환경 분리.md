@@ -48,7 +48,7 @@ parameter_overrides = [
 ```
 
 - `[dev]` 이나 `[prod]`와 같이 배포 설정을 분리할 수 있다.
-- stack name
+- stack name을 통해서 cloudformation의 스택 이름을 정할 수 있다.
 - `parameter_overrides`로 sam의 template.yaml 의 `Parameters`을 오버라이딩 할 수 있다.
 - 예시에서는 Environment 파라미터를 오버라이딩해서 template.yaml에서 배포 환경에 따라 해당 값을 다르게 전달한다.
 

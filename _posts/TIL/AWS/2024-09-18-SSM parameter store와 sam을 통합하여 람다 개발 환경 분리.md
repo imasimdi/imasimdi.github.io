@@ -101,7 +101,7 @@ Resources:
       Environment:
         Variables:
           DB_URL: !Sub '{{resolve:ssm:/example/${Environment}/db-url}}'
-          ENV: !Ref NowEnvironment
+          ENV: !Ref Environment
       ...
 Outputs:
     ...
@@ -110,7 +110,7 @@ Outputs:
 - samconfig.toml에서 설정한 parameter_overrides을 통해서 template.yaml의 `Parameters`을 환경별로 오버라이딩한다.
 - sam의 환경변수나 기타 다른 설정에 ssm parameter store의 값을 가져오려면 정책에 `SSMParameterReadPolicy`를 추가해야 한다.
 - 그리고 이것을 cloudformation의 `!Sub` 문법이나 `!Ref` 문법을 통해서 여러 곳에서 사용한다.
-    - 예를 들면 `'{{resolve:ssm:/example/${NowEnvironment}/db-url}}'`은 cloudformation에서 ssm parameter store의 변수를 가져오는 문법인데, 여기에 `!Sub`를 통해서 Parameters의 `NowEnvironment` 값을 넣을 수 있다.
+    - 예를 들면 `'{{resolve:ssm:/example/${Environment}/db-url}}'`은 cloudformation에서 ssm parameter store의 변수를 가져오는 문법인데, 여기에 `!Sub`를 통해서 Parameters의 `Environment` 값을 넣을 수 있다.
     - 트리거를 설정하는 Event에서도 SQS Queue url을 `Environment`로 나눌 수 있다.
 - 참고로 아직 sam template 에서는 `SecretString` 유형의 파라미터를 불러올 수 없다.
 {% endraw %}

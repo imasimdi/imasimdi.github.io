@@ -59,7 +59,7 @@ response = table.query(
 
 ## DynamoDB 비용 최적화
 
-[Amazon DynamoDB 비용 최적화 방법 살펴보기 | Amazon Web Services](https://aws.amazon.com/ko/blogs/tech/how-to-optimize-amazon-dynamodb-costs/)
+[Amazon DynamoDB 비용 최적화 방법 살펴보기 - Amazon Web Services](https://aws.amazon.com/ko/blogs/tech/how-to-optimize-amazon-dynamodb-costs/)
 
 ![alt text](/assets/images/AWS/image/4/image.png)
 

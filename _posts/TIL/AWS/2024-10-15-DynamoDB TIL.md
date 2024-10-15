@@ -1,4 +1,7 @@
-# DynamoDB TIL
+---
+layout: post
+category: AWS
+---
 
 ## 데이터 불러올 때 boto3 메서드 차이
 

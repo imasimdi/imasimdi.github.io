@@ -22,6 +22,8 @@ entries:
         url: backend-challenge
       - title: Software Engineering
         url: software-engineering
+      - title: Go
+        url: go
   - title: Recent posts
     post_list:
       limit: 100

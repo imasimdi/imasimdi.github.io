@@ -24,6 +24,8 @@ entries:
         url: software-engineering
       - title: Go
         url: go
+      - title: etc
+        url: etc
   - title: Recent posts
     post_list:
       limit: 100

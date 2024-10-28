@@ -106,9 +106,14 @@ def schedule_with_command(product_time_mapping, is_auto: str, commands: list[int
 
     ecs_success, rds_success = True, True
     ecs_success = create_eventbridge_rule(ecs_request, arn_mapping[ecs_request.type])
+
+    ...
 ```
 
-- 스케줄러 생성시 `ActionAfterCompletion='DELETE'`를 설정하여 완료되면 스케줄러를 삭제하게 하였다. 
+- 해당 상품의 오픈 시간에 따라서 ECS는 10분전, RDS는 30분전에 스케일 아웃, 스케일 인은 30분 후에 되도록 `auto_calculate ~` 함수를 작성해주었다.
+- `create_eventbridge_rule`에서는 `ScheduleRequest` 객체를 받아서 스케일 아웃 시간, 스케일 인 시간에 따라서 `서비스명 + 상품이름 + end or start`으로 각각 스케줄러를 생성시켜준다.
+- 스케줄러 생성시 `ActionAfterCompletion='DELETE'`를 설정하여 완료되면 스케줄러를 삭제하게 하였다.
+
 
 ### Executor
 

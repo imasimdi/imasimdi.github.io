@@ -1,3 +1,7 @@
+---
+layout: post
+category: AWS
+---
 
 ```python
 def find_hash_by_origin_url(self, origin_url: str) -> list[Optional[dict]]:

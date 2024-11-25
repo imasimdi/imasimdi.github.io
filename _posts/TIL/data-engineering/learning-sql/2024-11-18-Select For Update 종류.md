@@ -1,3 +1,9 @@
+---
+layout: post
+category: data-engineering
+subcategory: learning-sql
+---
+
 ## **일반 SELECT**
 
 - 단순 읽기 작업

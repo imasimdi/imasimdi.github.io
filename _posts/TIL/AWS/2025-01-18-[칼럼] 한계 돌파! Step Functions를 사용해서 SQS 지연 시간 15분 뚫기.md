@@ -63,7 +63,7 @@ def handle_message(message):
 
 Wait은 상태 머신 생성시 다음과 같이 지정해줄 수 있습니다.
 
-```json
+```javascript
 {
   "Type": "Wait",
   "Seconds": 10,
@@ -73,7 +73,7 @@ Wait은 상태 머신 생성시 다음과 같이 지정해줄 수 있습니다.
 
 이렇게 `Seconds`로 직접 설정해줄 수도 있고 `SecondsPath`를 사용해서 동적으로도 할당이 가능합니다.
 
-```json
+```javascript
 {
   "Type": "Wait",
   "SecondsPath": "$.waitSeconds",
@@ -87,7 +87,7 @@ Wait은 상태 머신 생성시 다음과 같이 지정해줄 수 있습니다.
 
 우선 Step Functions 상태 머신을 만들어 줍니다.
 
-```json
+```javascript
 {
   "StartAt": "Wait",
   "States": {
@@ -154,7 +154,7 @@ def lambda_handler(event, context):
 
 코드도 엄청 간단합니다. wait time과 메시지를 받고 이를 `start_execution`를 호출해 상태머신으로 보내줍니다. 이제 해당 람다에 POST 요청을 보내봅니다.
 
-```json
+```javascript
 {
     "wait_time": 60,
     "message": {

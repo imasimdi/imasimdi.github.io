@@ -3,6 +3,8 @@ layout: post
 category: python
 ---
 
+## 문제 발생
+
 FCM 전송 서버에서 일어난 일을 정리해보았습니다. 개발이 대략적으로 마쳐서 어제 처음으로 800명한테 보내보았는데, 발송은 잘 되었으나 다음과 같이 무시무시하게 경고를 하고 있었습니다.
 
 ![](https://velog.velcdn.com/images/leehjhjhj/post/2bf8ee1e-0ca3-4bea-bbbe-fdb40599c8e8/image.png)
@@ -41,6 +43,8 @@ FCM 전송 서버에서 일어난 일을 정리해보았습니다. 개발이 대
 [urllib3 connection pool full using messaging.send_each_for_multicast() · Issue #712 · firebase/firebase-admin-python](https://github.com/firebase/firebase-admin-python/issues/712)
 
 저만 겪는 문제가 아니었어요! 특정 버전에서 connection pool 에러가 발생한다고 합니다. 눈여겨 보았던 것은 FCM의 멀티캐스트 메시지가 실제로는 개별 메시지로 전송된다는 것 이었습니다. 이 동작을 확인하기 위해 소스코드를 직접 살펴보기로 했습니다.
+
+## 소스코드 분석
 
 ```python
 def send_each(messages, dry_run=False, app=None):
@@ -105,7 +109,7 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=len(message_data)) as exe
         return BatchResponse(responses)
 ```
 
-GitHub 이슈의 내용이 정확했습니다. 라이브러리는 예상과 달리 메시지들을 하나의 요청으로 모아서 보내지 않고, **각 메시지마다 별도의 스레드를 생성**하여 개별적으로 요청을 보내고 있었습니다. `ThreadPoolExecutor`가 메시지 개수만큼의 스레드를 생성하고, 각 스레드에서 `send_data`를 호출하는 방식입니다. 좀 충격적이네요..
+GitHub 이슈의 내용이 정확했습니다. 라이브러리는 예상과 달리 메시지들을 하나의 요청으로 모아서 보내지 않고, **각 메시지마다 별도의 스레드를 생성**하여 개별적으로 요청을 보내고 있었습니다. `ThreadPoolExecutor`가 메시지 개수만큼의 스레드를 생성하고, 각 스레드에서 `send_data`를 호출하는 방식입니다.
 
 requests 라이브러리의 기본 connection pool 크기가 10인데 반해 50개의 스레드가 동시에 요청을 보내고 있었으니 당연히 connection pool이 한계에 도달할 수밖에 없었습니다.
 
@@ -119,4 +123,4 @@ connection pool의 크기를 늘리는 방안도 고려했지만 대신 더 안�
 
 ![](https://velog.velcdn.com/images/leehjhjhj/post/17bf1bbd-0f0a-4c22-be4f-b37d4a79117a/image.png)
 
-알림서버를 람다로 옮기니 너무 안정적이고 속도도 빠릅니다. 800개 정도는 1.5초 정도 보내지는 것 같아요.
+기존의 테이블을 큐로 사용하여 5분에 한번씩 크론을 도는 방식에서 알림서버를 람다로 옮기니 매우 안정적이고 빠른 속도로 메시지를 전송할 수 있게 되었습니다. 해당 서버에 대한 포스팅은 이후에 완성되고 운영 후 공유드리겠습니다.

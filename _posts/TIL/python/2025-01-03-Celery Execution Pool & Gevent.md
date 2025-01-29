@@ -3,6 +3,8 @@ layout: post
 category: python
 ---
 
+Celery의 여러 Worker Pool을 정리하고, 그 중에서도 널리 사용되는 Gevent에 대해서 자세하게 서치해보았습니다.
+
 ## Prefork Worker Pool
 
 - Celery의 기본 실행 워커 모델, 여러 개의 worker 프로세스를 미리 생성해서 작업을 처리
@@ -56,11 +58,14 @@ celery -A tasks worker -Q slow_queue --prefetch-multiplier=1 -n slow_worker@%h
     - 따라서 작업 길이가 길다면 해당 워커는 1로 설정
     - 작업 길이가 짧다면 기본값인 4 또는 더 높은 값 사용
 
-우선 Gevent는 Greenlet이라는 그린스레드를 사용한 라이브러리입니다. 그린 스레드가 뭐냐면 커널 공간이 아닌 사용자 공간에서 관리되고, 보통 하나의 네이티브 스레드에서 여러 그린 스레드를 실행하는 방식으로 작동합니다.
+## Gevent란?
 
-greenlet은 경량 스레드(그린 스레드)이기 때문에, 컨텍스트 스위칭 비용이 적습니다.
+Gevent는 Greenlet이라는 그린스레드를 사용한 코루틴 기반의 Python 네트워킹 라이브러리입니다.
 
-Gevent는 코루틴 기반의 Python 네트워킹 라이브러리입니다. Gevent는 libev 또는 libuv 이벤트 루프 위에서 동기적인 API를 제공하기 위해서 Greenlet을 사용하는데요, 그럼 Uvicorn과는 차이점이 뭘까요?
+> greenlet은 경량 스레드(그린 스레드)이기 때문에, 컨텍스트 스위칭 비용이 적습니다.
+> 그린 스레드란 커널 공간이 아닌 사용자 공간에서 관리되고, 보통 하나의 네이티브 스레드에서 여러 그린 스레드를 실행하는 방식으로 작동합니다.
+
+Gevent는 libev 또는 libuv 이벤트 루프 위에서 동기적인 API를 제공하기 위해서 Greenlet을 사용하는데요, 그럼 Uvicorn과는 차이점이 뭘까요?
 
 Uvicorn은 asyncio 위에서 돌아가기 때문에 네이티브한 async, await과 같은 비동기 함수를 사용할 수 있습니다. 하지만 비동기 함수에서 동기 함수를 실행하면 전체 이벤트 루프가 막히는 상황이 발생합니다.
 

@@ -2,6 +2,7 @@
 layout: post
 category: data-engineering
 subcategory: learning-sql
+tags: [article]
 ---
 
 ![](https://velog.velcdn.com/images/leehjhjhj/post/be4dab74-27fc-491f-bf9f-3cb192d42ae0/image.png)

@@ -16,13 +16,13 @@ SELECT
     token
 FROM
    (
-	    SELECT
-			    *
-			FROM
-					fcm_token
-			WHERE
-					user_id = :user_id
-	    ORDER BY crt_date desc
+	SELECT
+		*
+	FROM
+		fcm_token
+	WHERE
+		user_id = :user_id
+	ORDER BY crt_date desc
     ) AS fcm_token_device
 GROUP BY token;
 ```

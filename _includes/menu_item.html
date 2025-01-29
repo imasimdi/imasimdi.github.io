@@ -19,6 +19,18 @@
      -%}
     {%-endif-%}
 
+    {%-if item.title == "Articles"-%}
+      <ul>
+        {%-assign article_posts = site.tags["article"] | sort: "date" | reverse-%}
+        {%-for post in article_posts-%}
+          <li>
+            <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+          </li>
+        {%-endfor-%}
+      </ul>
+    {%-endif-%}
+
     {%-if item.entries-%}
       {%-include menu_item.html collection=item.entries-%}
     {%-endif-%}

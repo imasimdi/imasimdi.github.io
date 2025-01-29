@@ -1,6 +1,7 @@
 ---
 layout: post
 category: AWS
+tags: [article]
 ---
 
 ![](https://velog.velcdn.com/images/leehjhjhj/post/545c291c-b7bd-4e1b-956a-817735485063/image.png)

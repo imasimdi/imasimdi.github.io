@@ -26,6 +26,11 @@ entries:
         url: go
       - title: etc
         url: etc
+  - title: Articles
+    type: tag-collection
+    tag: article
+    sort: date
+    order: desc
   - title: Recent posts
     post_list:
       limit: 100

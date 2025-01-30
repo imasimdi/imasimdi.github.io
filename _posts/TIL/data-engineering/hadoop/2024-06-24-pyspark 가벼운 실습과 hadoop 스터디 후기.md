@@ -2,6 +2,7 @@
 layout: post
 category: data-engineering
 subcategory: hadoop
+tags: [hadoop]
 ---
 
 - spark와 조금이라도 더 친해지기 위해서 kaggle의 데이터를 받아와서 가벼운 실습을 진행하였다.

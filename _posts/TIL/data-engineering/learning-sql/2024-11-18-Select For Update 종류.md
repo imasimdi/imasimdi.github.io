@@ -2,6 +2,7 @@
 layout: post
 category: data-engineering
 subcategory: learning-sql
+tags: [DB]
 ---
 
 ## **일반 SELECT**

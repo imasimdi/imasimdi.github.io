@@ -2,6 +2,7 @@
 layout: post
 category: data-engineering
 subcategory: elastic-search
+tags: [elastic-search]
 ---
 [다나와 원본](https://danawalab.github.io/elastic/2020/09/04/ElasticSearch-IngestPipeLine.html)
 

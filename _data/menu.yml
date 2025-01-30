@@ -31,6 +31,7 @@ entries:
     tag: article
     sort: date
     order: desc
+    limit: 100
   - title: Recent posts
     post_list:
       limit: 100

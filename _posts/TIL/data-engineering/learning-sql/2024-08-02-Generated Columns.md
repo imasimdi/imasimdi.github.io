@@ -2,6 +2,7 @@
 layout: post
 category: data-engineering
 subcategory: learning-sql
+tags: [SQL]
 ---
 
 - generated columns는 Mysql 5.7 버전부터 지원한다.

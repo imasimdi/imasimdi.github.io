@@ -1,34 +1,25 @@
 <ul>
-  {%-for item in include.collection-%}
+  {%- for item in include.collection -%}
     <li>
-    {%- if item.url -%}
-      <a href="{{ item.url }}">{{ item.title }}</a>
-    {%- else -%}
-      {{ item.title }}
-    {%- endif -%}
+      {%- if item.url -%}
+        <a href="{{ item.url }}">
+          {{ item.title }}
+        </a>
+      {%- else -%}
+        {{ item.title }}
+      {%- endif -%}
     </li>
 
-    {%-if item.post_list-%}
-      {%
-        include post_list.html
-          category=item.post_list.category
-          limit=item.post_list.limit
-          show_more=item.post_list.show_more
-          show_more_text=item.post_list.show_more_text
-          show_more_url=item.post_list.show_more_url
-     -%}
-    {%-endif-%}
-
-    {%-if item.title == "Articles"-%}
-      <ul>
-        {%-assign article_posts = site.tags["article"] | sort: "date" | reverse-%}
-        {%-for post in article_posts-%}
-          <li>
-            <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
-            <a href="{{ post.url }}">{{ post.title }}</a>
-          </li>
-        {%-endfor-%}
-      </ul>
+    {%-if item.post_list or item.type == "tag-collection"-%}
+      {% include post_list.html
+         category=item.post_list.category
+         limit=item.post_list.limit
+         show_more=item.post_list.show_more
+         show_more_text=item.post_list.show_more_text
+         show_more_url=item.post_list.show_more_url
+         tag=item.tag
+         sort=item.sort
+         order=item.order -%}
     {%-endif-%}
 
     {%-if item.entries-%}

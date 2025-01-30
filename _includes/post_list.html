@@ -24,8 +24,8 @@
       <span>{{- post.date | date: site.theme_config.date_format -}}</span>&nbsp;
       {% if post.category %}
         <span class="category-tag">
-          {% if post.category-show %}
-            {{ post.category-show }}
+          {% if post.tags.first %}
+            {{ post.tags.first }}
           {% else %}
             {{ post.category }}
           {% endif %}

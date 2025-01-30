@@ -2,6 +2,7 @@
 layout: post
 category: data-engineering
 subcategory: learning-sql
+tags: [SQL]
 ---
 - 24년 6월 24일에 열린 AUSG 빅챗 발표 중 이태현님의 발표를 듣고, 더 찾아보며 정리한 내용입니다.
 

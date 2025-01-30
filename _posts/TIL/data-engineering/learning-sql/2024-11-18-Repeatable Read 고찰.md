@@ -2,6 +2,7 @@
 layout: post
 category: data-engineering
 subcategory: learning-sql
+tags: [DB]
 ---
 
 ## Repeatable Read 고찰

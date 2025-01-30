@@ -2,6 +2,7 @@
 layout: post
 category: data-engineering
 subcategory: elastic-search
+tags: [elastic-search]
 ---
 
 - 생성한 인덱스를 관리할 목적

@@ -58,6 +58,12 @@ li { margin: 0.4rem 0; }
   padding: 2rem 1rem;
 }
 
+@media screen and (max-width: 768px) {
+  .w {
+    padding: 1rem 0.5rem; // 모바일에서는 패딩을 줄임
+  }
+}
+
 hr {
   text-align: center;
   border: 0;
@@ -116,4 +122,20 @@ a {
 a:hover {
   color: darkblue; /* 호버 시 색깔 변경 */
   text-decoration: underline; /* 호버 시 밑줄 추가 (원하는 경우) */
+}
+
+@media screen and (max-width: 480px) {
+  ul {
+    padding-left: 2rem;  // 모바일에서는 들여쓰기 줄임
+  }
+  
+  // Recent Posts 섹션의 중첩된 리스트에 대한 추가 조정
+  ul ul {
+    padding-left: 0.9rem;  // 중첩된 리스트의 들여쓰기를 더 줄임
+  }
+
+  // Recent Posts의 포스트 리스트
+  li li {
+    margin-left: 0.9rem;  // 포스트 항목의 왼쪽 마진도 줄임
+  }
 }

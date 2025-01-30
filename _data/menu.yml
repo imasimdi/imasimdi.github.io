@@ -5,11 +5,12 @@ entries:
   - title: info
     entries:
       - title: It's a simple blog that shows what I learned today in an easy way.
-      - title: github repo
+      - title: github
         url: https://github.com/leehjhjhj
-      - title: velog blog
-        url: https://velog.io/@leehjhjhj/posts
       - title: linkedin
+        url: https://www.linkedin.com/in/leehjhjhj/
+      - title: regacy velog blog
+        url: https://velog.io/@leehjhjhj/posts
   - title: Category
     entries:
       - title: Python

@@ -3,7 +3,12 @@
 {%-elsif include.tag-%}
   {%-assign posts = site.tags[include.tag] | sort: include.sort | reverse-%}
 {%-else-%}
-  {%-assign posts = site.posts-%}
+  {% assign posts = '' | split: '' %}
+  {% for post in site.posts %}
+    {% unless post.tags contains 'article' %}
+      {% assign posts = posts | push: post %}
+    {% endunless %}
+  {% endfor %}
 {%-endif-%}
 
 {%-if include.limit and posts.size > include.limit-%}

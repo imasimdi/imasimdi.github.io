@@ -5,6 +5,8 @@ category-show: 아티클
 tags: [article]
 ---
 
+![](https://velog.velcdn.com/images/leehjhjhj/post/63f823f6-632a-47d7-b69f-92486ad1a940/image.png)
+
 LLM을 다양한 곳에 사용해보자라는 사내 요구 사항이 점차 늘게 되면서, 확장성과 재사용성을 고려한 Lambda 기반 LLM 시스템을 개발하였습니다. 이 시스템의 첫 번째 활용 사례로 고객 문의를 요약하고 감정 표현을 정제하는 기능을 구현한 경험을 공유하겠습니다.
 
 ## 설계

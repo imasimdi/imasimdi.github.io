@@ -1,6 +1,6 @@
 ---
 layout: archive
-which_category: Java
+which_category: java
 title: Java I learned
-permalink: /Java/
+permalink: /java/
 ---

@@ -25,6 +25,8 @@ entries:
         url: software-engineering
       - title: Go
         url: go
+      - title: java
+        url: java
       - title: etc
         url: etc
   - title: Articles

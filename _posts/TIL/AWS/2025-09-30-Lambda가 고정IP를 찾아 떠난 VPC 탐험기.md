@@ -1,5 +1,6 @@
 ---
 layout: post
+slug: lambda-static-ip-vpc
 category: AWS
 category-show: 아티클
 tags: [article]
